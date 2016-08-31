@@ -89,7 +89,7 @@
       component                         ; idempotence
       (let [vhosts-model
             (vhosts-model
-             [{:scheme :http :host (format "localhost:%d" port)}
+             [{:scheme :http :host (format "0.0.0.0:%d" port)}
               (routes db {:port port})])
             listener (yada/listener vhosts-model {:port port})]
         (infof "Started web-server on port %s" (:port listener))
